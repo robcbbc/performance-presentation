@@ -4,7 +4,7 @@
 	<head>
 		<meta charset="utf-8">
 
-		<title>reveal.js - The HTML Presentation Framework</title>
+		<title>You get a prize for noticing the title</title>
 
 		<meta name="description" content="A framework for easily creating beautiful presentations using HTML">
 		<meta name="author" content="Hakim El Hattab">
@@ -147,12 +147,7 @@
 						<h1>Ok, so... Browsers</h1>
 						<img src="./img/browser-stats.png" />
 					</section>
-				</section>
-
-
-
-
-				<section>
+					
 					<section>
 						<h1>Explorer 8</h1>
 						<h3>(yes really!)</h3>
@@ -213,6 +208,48 @@ $media-query-free-breakpoint: 900px;
 
 				<section>
 					<section>
+						<h1>Timing!</h1>
+						<h3>How can I help?</h3>
+						<div class="fragment">
+							<p>modules/timing/timing.js</p>
+							<pre><code>
+	var perf = window.performance 
+			  || window.msPerformance 
+			  || window.webkitPerformance 
+			  || window.mozPerformance;
+
+	...  
+
+	if (this.getPageLoadTime() > 3000) {
+	    return 'slow';
+	} else {
+	    return 'fast';
+	}
+
+							</code></pre>
+						</div>
+					</section>
+					<section>
+						<p>Perhaps reduce image quality?</p>
+						<div class="fragment">
+							<pre><code>
+    function doImageEnhance () {
+        if (timingGroup === 'slow') {
+            //reduce image quality by 25% for slow connections
+            return new ImageEnhancer('',0.75);
+        } else {
+            return new ImageEnhancer();
+        }
+    }
+							</code></pre>
+						</div>
+						<img class="fragment" src="img/ie8news.png" width="200" height="200"/>
+					</section>
+				</section>
+
+
+				<section>
+					<section>
 						<h1>CSS Marriage</h1>
 					</section>
 					<section>
@@ -236,7 +273,9 @@ $media-query-free-breakpoint: 900px;
 						</ul>
 					</section>
 				</section>
-
+				<section>
+					<h1>lazyloading</h1>
+				</section>
 
 				<section>
 					<section>
