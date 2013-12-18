@@ -165,8 +165,40 @@
 						<h3>Sass comes in very handy...</h3>
 					</section>
 					<section>
+						<h3>Chris Eppstein</h3>
+						<p>Co-Creator of SASS</p>
+						<a href="http://bit.ly/sassiefix">http://bit.ly/sassiefix</a>
+					</section>
+					<section>
+						<p>@media screen and (min-width: 500px) {</p>
+						<div class="fragment">
+							<p>↓</p>
+							<p>@include respond-to(500px) {</p>
+						</div>
+					</section>
+					<section>
 						<p>core.scss → core.css</p>
-						<p>old-ie.scss → old-ie.css</p>
+						<p>compact.scss → compact.css</p>
+						<p>tablet.scss → tablet.css</p>
+						<p>wide.scss → wide.css</p>
+						<div class="fragment roll-in">
+							<p class="fragment highlight-blue">old-ie.scss → old-ie.css</p>
+						</div>
+					</section>
+					<section>
+						<p>wide.css</p>
+						<pre><code>@import '../../partials/base/_wide';</code></pre>
+
+						<div class="fragment">
+							<p>old-ie.css</p>
+							<pre><code>
+$media-queries: false;
+$media-query-free-breakpoint: 900px;
+@import '../../partials/base/_wide';
+							</code></pre>
+						</div>
+
+
 					</section>
 					<section>
 						<img width="850" src="img/ie8.png" class="image">
@@ -177,23 +209,96 @@
 					<section>
 						<img width="850" src="img/ie8rtl.png" class="image">
 					</section>
-
 				</section>
 
 				<section>
-					<h2>Heads Up</h2>
-					<p>
-						reveal.js is a framework for easily creating beautiful presentations using HTML. You'll need a browser with
-						support for CSS 3D transforms to see it in its full glory.
-					</p>
+					<section>
+						<h1>CSS Marriage</h1>
+					</section>
+					<section>
+						<p>Currently, the stylesheets ARE the media queries</p>
+						<ul class="fragment roll-in">
+							<li>core.css - 108KB (16KB)</li>
+							<li>compact.css - 68KB (12KB)</li>
+							<li>tablet.css - 89KB (15KB)</li>
+							<li>wide.css - 88KB (15KB)</li>
+						</ul>
+					</section>
+					<section data-transition="linear">
+						<h3>Can they be combined?</h3>
+						<h4>...and let media queries do the work</h4>
+						<ul>
+							<li class="fragment">core.css - 108KB (16KB)</li>
+							<li class="fragment">
+								postload.css - ???KB*
+								<small style="display: block">* insert gzip magic here</small>
+							</li>
+						</ul>
+					</section>
+				</section>
 
-					<aside class="notes">
-						Oh hey, these are some notes. They'll be hidden in your presentation, but you can see them if you open the speaker notes window (hit 's' on your keyboard).
-					</aside>
+
+				<section>
+					<section>
+						<h1>Metrics Tool</h1>
+						<small class="fragment">Code quality: Hack</small>
+					</section>
+					<section>
+						<img src="img/reports-progress.gif" class="image">
+					</section>
+					<section>
+						<img src="img/report-page.png" class="image">
+					</section>
+					<section>
+						<img src="img/speedcurve.png" class="image">
+					</section>
+					<section>
+						<img src="img/speedcurve-comparison.png" class="image">
+					</section>
+					<section>
+						<img src="img/report-page.png" class="image">
+					</section>
+					<section>
+						<img src="img/russian-metrics.png" class="image">
+					</section>
+					<section>
+						<img src="img/russian-metrics-focused.png" class="image">
+					</section>
+					<section>
+						<img src="img/image-sizes.jpg" class="image">
+					</section>
+					<section>
+						<h3>What about content pages?</h3>
+						<img src="img/speedcurve.png" class="image fragment">
+					</section>
+					<section>
+						<h3>Multiple image requests on story pages</h2>
+						<img src="img/storypage-dupes.png" class="image">
+					</section>
+					<section>
+						<pre>
+
+ /news/1.24.0-556/js/vendor/jquery-2/jquery.min.js
+ /news/1.24.0-556/js/compiled/all.js
+						</pre>
+						<h3 class="fragment">
+							2 requests
+						</p>
+					</section>
+					<section>
+						<p>jquery.js + all.js</p>
+						<p class="fragment roll-in">
+							<strong>1 request less and 10-12K smaller</strong>
+						</p>
+					</section>
+				</section>
+
+				<section>
+					<h1>Fin.</h1>
 				</section>
 
 				<!-- Example of nested vertical slides -->
-				<section>
+				<!--section>
 					<section>
 						<h2>Vertical Slides</h2>
 						<p>
@@ -481,7 +586,7 @@ function linkify( selector ) {
 				<section>
 					<h1>THE END</h1>
 					<h3>BY Hakim El Hattab / hakim.se</h3>
-				</section>
+				</section-->
 
 			</div>
 
